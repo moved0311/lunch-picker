@@ -6,11 +6,15 @@ import "./lunch-LaunchPicker.css";
 
 export default function LaunchPicker() {
   useEffect(() => {
-    // fetch("/lunch_unqiue")
-    //   .then(res => res.text())
-    //   .then(data => {
-    //     console.log(data);
-    //   });
+    fetch(
+      "https://raw.githubusercontent.com/moved0311/lunch-picker/master/public/lunch_unique"
+    )
+      .then(res => {
+        return res.text();
+      })
+      .then(data => {
+        console.log(data);
+      });
   });
   return (
     <div>
