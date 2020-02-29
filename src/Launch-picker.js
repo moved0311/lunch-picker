@@ -3,8 +3,12 @@ import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
 import "./lunch-LaunchPicker.css";
+import $ from "jquery";
 
 export default function LaunchPicker() {
+  const [lunch, setLunch] = useState("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12");
+  let len = lunch.split("\n").length;
+  //get default data from github raw data.
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/moved0311/lunch-picker/master/public/lunch_unique"
@@ -13,18 +17,39 @@ export default function LaunchPicker() {
         return res.text();
       })
       .then(data => {
-        console.log(data);
+        setLunch(data);
       });
-  });
+  }, []);
+
+  function handleClick(e) {
+    let rowHeight = $(".row").height();
+    let randNumOfDataLen = Math.floor(Math.random() * len);
+    console.log(randNumOfDataLen + 1);
+    let offset = -rowHeight * randNumOfDataLen;
+    $(".row").css("top", offset);
+  }
   return (
     <div>
       <CodeMirror
-        value="<h1>I ♥ react-codemirror2</h1>"
+        value={lunch}
         options={{
-          lineNumbers: true
+          lineNumbers: true,
+          mode: "text/css",
+          styleSelectedText: true
         }}
-        onChange={(editor, data, value) => {}}
+        onChange={(editor, data, value) => {
+          setLunch(value);
+        }}
       />
+      <button onClick={handleClick}>Draw</button>
+      <div id="container">
+        <div id="selected"></div>
+        {lunch.split("\n").map((row, idx) => (
+          <p className="row" key={idx}>
+            {row}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }

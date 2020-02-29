@@ -1,3 +1,30 @@
-.react-codemirror2 {
-  border: 1px solid #eee;
+.CodeMirror {
+  height: 50vh;
+  border: 1px solid #ddd;
+}
+#container {
+  height: 40vh;
+  border: 1px solid #ddd;
+  text-align: center;
+  overflow: hidden;
+  /* overflow-y: scroll; */
+}
+.row {
+  top: 0;
+  margin: 0;
+  position: relative;
+  transition-duration: 3s, 5s, 10s;
+  animation-timing-function: ease-out;
+}
+#selected {
+  width: 100%;
+  height: 23px;
+  background: #d7d4f0;
+  border: 1px solid black;
+  position: fixed;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
 }
