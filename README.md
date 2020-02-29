@@ -2,7 +2,7 @@
 
 ### [Demo](<[https://moved0311.github.io/lunch-picker/](https://moved0311.github.io/lunch-picker/)>)
 
-![Demo](/demo.gif)
+![Demo](public/demo.gif)
 
 ## Reference
 
