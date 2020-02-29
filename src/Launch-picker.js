@@ -4,6 +4,8 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
 import "./lunch-LaunchPicker.css";
 import $ from "jquery";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
 
 export default function LaunchPicker() {
   const [lunch, setLunch] = useState("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12");
@@ -41,7 +43,9 @@ export default function LaunchPicker() {
           setLunch(value);
         }}
       />
-      <button onClick={handleClick}>Draw</button>
+      <Button variant="outline-primary" id="btn" onClick={handleClick}>
+        Draw
+      </Button>
       <div id="container">
         <div id="selected"></div>
         {lunch.split("\n").map((row, idx) => (
