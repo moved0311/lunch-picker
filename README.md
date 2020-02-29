@@ -1,6 +1,6 @@
 ## Lunch picker
 
-### [Demo](<[https://moved0311.github.io/lunch-picker/](https://moved0311.github.io/lunch-picker/)>)
+### [Demo](https://moved0311.github.io/lunch-picker/)
 
 ![Demo](public/demo.gif)
 
