@@ -24,11 +24,19 @@ export default function LaunchPicker() {
   }, []);
 
   function handleClick(e) {
-    let rowHeight = $(".row").height();
-    let randNumOfDataLen = Math.floor(Math.random() * len);
-    console.log(randNumOfDataLen + 1);
-    let offset = -rowHeight * randNumOfDataLen;
-    $(".row").css("top", offset);
+    handleReset();
+    setTimeout(() => {
+      $(".row").removeClass("notransition");
+      let rowHeight = $(".row").height();
+      let randNumOfDataLen = Math.floor(Math.random() * len);
+      console.log(randNumOfDataLen + 1);
+      let offset = -rowHeight * randNumOfDataLen;
+      $(".row").css("top", offset);
+    }, 200);
+  }
+  function handleReset() {
+    $(".row").addClass("notransition");
+    $(".row").css("top", "0");
   }
   return (
     <div>

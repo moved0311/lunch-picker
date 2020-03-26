@@ -19,6 +19,12 @@
   transition-duration: 3s, 5s;
   animation-timing-function: ease-out;
 }
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
 #selected {
   width: 100%;
   height: 23px;
